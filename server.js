@@ -1,5 +1,6 @@
-// Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
+
+const HomeController = require('./controllers/home.controller');
 
 fastify.register(require("point-of-view"), {
   engine: {
@@ -7,11 +8,8 @@ fastify.register(require("point-of-view"), {
   },
 })
 
-fastify.get("/", (req, reply) => {
-  reply.view("/html/index.ejs", { text: "text" })
-});
+fastify.get("/", HomeController.index);
 
-// Run the server!
 const start = async () => {
   try {
     await fastify.listen(3000)
