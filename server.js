@@ -1,6 +1,6 @@
 const fastify = require('fastify')();
 
-const HomeController = require('./controllers/home.controller');
+const HomeController = require('./home.controller');
 
 fastify.register(require("point-of-view"), {
   engine: {
