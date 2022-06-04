@@ -1,4 +1,4 @@
-const fastify = require('fastify');
+const fastify = require('fastify')();
 
 const HomeController = require('./controllers/home.controller');
 
